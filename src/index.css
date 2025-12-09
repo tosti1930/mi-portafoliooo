@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Fira+Code:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Forzamos el color oscuro base */
+  background-color: #121212;
+  color: white;
+  font-family: 'Fira Code', monospace;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* IMPORTANTE: Eliminé 'display: flex' y 'place-items: center' 
+     para que tu NavBar pueda quedarse arriba y no se centre todo. */
+}
+/*Desplazamiento Suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Arreglo para las flechas del carrusel */
+.react-multiple-carousel__arrow {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255,255,255,0.5) !important;
+}
+.react-multiple-carousel__arrow:hover {
+    background: #a855f7 !important; /* Color púrpura al pasar el mouse */
+}
