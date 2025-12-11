@@ -35,13 +35,6 @@ export const Projects = () => {
             githubUrl: "https://github.com/tosti1930/Pass-Generator",
             demoUrl: "https://passwordgenerator-gamma-ten.vercel.app/"
         },
-        {
-            title: t('projects.p5.title'),
-            description: t('projects.p5.desc'),
-            imgUrl: "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/cf/b9/28/cfb9281c-6354-e66e-5ee5-b2aeadf81c37/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png",
-            githubUrl: "https://github.com/tosti1930/Weather-App",
-            demoUrl: "#"
-        }
     ];
 
     return (

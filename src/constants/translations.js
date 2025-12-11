@@ -61,10 +61,6 @@ export const translations = {
                 title: "Password Generator",
                 desc: "Generador de contraseñas seguro y personalizable que permite crear contraseñas fuertes según tus preferencias de seguridad."
             },
-            p5: {
-                title: "Weather App",
-                desc: "Aplicación web que permite consultar el clima actual y pronóstico. Utiliza una API externa para obtener datos en tiempo real de cualquier ciudad."
-            }
         },
         about: {
             title: "Sobre Mí",
