@@ -61,6 +61,10 @@ export const translations = {
                 title: "Password Generator",
                 desc: "Generador de contraseñas seguro y personalizable que permite crear contraseñas fuertes según tus preferencias de seguridad."
             },
+            p5: {
+                title: "Punto de Venta de Cine",
+                desc: "Sistema de punto de venta diseñado para la gestión de ventas y reservas en un cine, facilitando la administración de funciones y asientos."
+            }
         },
         about: {
             title: "Sobre Mí",
