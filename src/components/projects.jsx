@@ -26,7 +26,7 @@ export const Projects = () => {
             description: t('projects.p3.desc'),
             imgUrl: "https://cdn.textstudio.com/asset/tool/qr-code-generator/meta.png",
             githubUrl: "https://github.com/tosti1930/QR-Code-Generator",
-            demoUrl: "#"
+            demoUrl: "https://qrcodegenerator-chi-nine.vercel.app/"
         },
         {
             title: t('projects.p4.title'),
