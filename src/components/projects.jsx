@@ -12,7 +12,7 @@ export const Projects = () => {
             description: t('projects.p1.desc'),
             imgUrl: "https://lh3.games-cdn.com/cz/casual/38528-classic-snake-crazygames.com.jpeg",
             githubUrl: "https://github.com/tosti1930/Snake-Game",
-            demoUrl: "https://github.com/tosti1930/Snake-Game"
+            demoUrl: "https://snakegame-beige.vercel.app/"
         },
         {
             title: t('projects.p2.title'),
