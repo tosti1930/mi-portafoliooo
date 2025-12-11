@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 // 1. IMPORTAMOS FaBars (Hamburguesa) y FaTimes (Cerrar X)
