@@ -39,7 +39,8 @@ export const Projects = () => {
             title: t('projects.p5.title'),
             description: t('projects.p5.desc'),
             imgUrl: "https://imgmedia.larepublica.pe/1200x630/larepublica/original/2022/04/22/6262fc8039f048617428570b.jpg",
-            githubUrl: "https://puntoventacinee.vercel.app/login"
+            githubUrl: "https://github.com/tosti1930/PuntoVentaCine",
+            demoUrl: "https://puntoventacinee.vercel.app/login"
         },
     ];
 
