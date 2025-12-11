@@ -33,7 +33,7 @@ export const Projects = () => {
             description: t('projects.p4.desc'),
             imgUrl: "https://peoplesblog.co.in/upload/banners/how-to-secure-the-passwords-of-users-in-web-applications.jpeg",
             githubUrl: "https://github.com/tosti1930/Pass-Generator",
-            demoUrl: "passwordgenerator-gamma-ten.vercel.app"
+            demoUrl: "https://passwordgenerator-gamma-ten.vercel.app/"
         },
         {
             title: t('projects.p5.title'),
