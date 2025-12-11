@@ -4,7 +4,7 @@ import { translations } from '../constants/translations';
 // 1. Crear el Contexto
 const LanguageContext = createContext();
 
-// 2. Crear el Proveedor (El componente que envolverá tu App)
+// 2. Crear el Proveedor (El componente que envolverá la App)
 export const LanguageProvider = ({ children }) => {
     const [language, setLanguage] = useState("es"); // Idioma por defecto
 
