@@ -1,39 +1,31 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { useLanguage } from '../context/LanguageContext'; // <--- 1. Importar Contexto
+import { useLanguage } from '../context/LanguageContext';
 import { FaReact, FaJs, FaHtml5, FaNodeJs, FaGitAlt, FaPython, FaJava } from "react-icons/fa";
 import { SiTailwindcss, SiTypescript } from "react-icons/si";
 
 export const Skills = () => {
-    const { t } = useLanguage(); // <--- 2. Usar Hook
+    const { t } = useLanguage();
 
-    // Configuración de cuántos items se ven según el tamaño de pantalla
     const responsive = {
-        superLargeDesktop: {
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
-        }
+        superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: 5 },
+        desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3 },
+        tablet: { breakpoint: { max: 1024, min: 464 }, items: 2 },
+        mobile: { breakpoint: { max: 464, min: 0 }, items: 1 }
     };
 
     return (
-        <section className="skill relative py-20 bg-[#121212]" id="skills">
-            <div className="container mx-auto px-4">
-                <div className="bg-[#151515] rounded-[50px] text-center py-14 px-8 shadow-[0_0_50px_0_rgba(0,0,0,0.5)] border border-gray-800 relative z-10">
+        // Agregamos 'relative overflow-hidden' para que la luz no se salga de la sección
+        <section className="skill relative py-20 bg-[#121212] overflow-hidden" id="skills">
 
-                    {/* Título y Descripción Traducidos */}
+            {/* --- FONDO DECORATIVO (CSS PURO) --- */}
+            {/* Reemplazamos la imagen por este div con gradiente y blur */}
+            <div className="absolute top-[10%] left-[-10%] w-[40%] h-[60%] bg-gradient-to-r from-purple-600/40 to-pink-600/40 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="bg-[#151515] rounded-[50px] text-center py-14 px-8 shadow-[0_0_50px_0_rgba(0,0,0,0.5)] border border-gray-800">
+
                     <h2 className="text-4xl font-bold mb-4 text-white">
                         {t('skills.title')}
                     </h2>
@@ -54,7 +46,7 @@ export const Skills = () => {
                             <div className="w-32 h-32 rounded-full border-4 border-purple-600 flex items-center justify-center shadow-[0_0_20px_rgba(147,51,234,0.5)]">
                                 <FaReact size={60} className="text-purple-400" />
                             </div>
-                            <h5 className="text-xl font-bold mt-2">React</h5>
+                            <h5 className="text-xl font-bold mt-2 text-white">React</h5>
                         </div>
 
                         {/* ITEM 2: JavaScript */}
@@ -62,7 +54,7 @@ export const Skills = () => {
                             <div className="w-32 h-32 rounded-full border-4 border-yellow-500 flex items-center justify-center shadow-[0_0_20px_rgba(234,179,8,0.5)]">
                                 <FaJs size={60} className="text-yellow-400" />
                             </div>
-                            <h5 className="text-xl font-bold mt-2">JavaScript</h5>
+                            <h5 className="text-xl font-bold mt-2 text-white">JavaScript</h5>
                         </div>
 
                         {/* ITEM 3: TypeScript */}
@@ -70,7 +62,7 @@ export const Skills = () => {
                             <div className="w-32 h-32 rounded-full border-4 border-blue-600 flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.5)]">
                                 <SiTypescript size={60} className="text-blue-500" />
                             </div>
-                            <h5 className="text-xl font-bold mt-2">TypeScript</h5>
+                            <h5 className="text-xl font-bold mt-2 text-white">TypeScript</h5>
                         </div>
 
                         {/* ITEM 4: Tailwind */}
@@ -78,7 +70,7 @@ export const Skills = () => {
                             <div className="w-32 h-32 rounded-full border-4 border-cyan-500 flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.5)]">
                                 <SiTailwindcss size={60} className="text-cyan-400" />
                             </div>
-                            <h5 className="text-xl font-bold mt-2">Tailwind CSS</h5>
+                            <h5 className="text-xl font-bold mt-2 text-white">Tailwind CSS</h5>
                         </div>
 
                         {/* ITEM 5: HTML & CSS */}
@@ -86,7 +78,7 @@ export const Skills = () => {
                             <div className="w-32 h-32 rounded-full border-4 border-orange-500 flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.5)]">
                                 <FaHtml5 size={60} className="text-orange-500" />
                             </div>
-                            <h5 className="text-xl font-bold mt-2">HTML5 / CSS3</h5>
+                            <h5 className="text-xl font-bold mt-2 text-white">HTML5 / CSS3</h5>
                         </div>
 
                         {/* ITEM 6: Node JS */}
@@ -94,7 +86,7 @@ export const Skills = () => {
                             <div className="w-32 h-32 rounded-full border-4 border-green-600 flex items-center justify-center shadow-[0_0_20px_rgba(22,163,74,0.5)]">
                                 <FaNodeJs size={60} className="text-green-500" />
                             </div>
-                            <h5 className="text-xl font-bold mt-2">Node.js</h5>
+                            <h5 className="text-xl font-bold mt-2 text-white">Node.js</h5>
                         </div>
 
                         {/* ITEM 7: Git */}
@@ -102,7 +94,7 @@ export const Skills = () => {
                             <div className="w-32 h-32 rounded-full border-4 border-red-600 flex items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.5)]">
                                 <FaGitAlt size={60} className="text-red-500" />
                             </div>
-                            <h5 className="text-xl font-bold mt-2">Git</h5>
+                            <h5 className="text-xl font-bold mt-2 text-white">Git</h5>
                         </div>
 
                         {/* ITEM 8: Python */}
@@ -110,7 +102,7 @@ export const Skills = () => {
                             <div className="w-32 h-32 rounded-full border-4 border-yellow-400 flex items-center justify-center shadow-[0_0_20px_rgba(202,138,4,0.5)]">
                                 <FaPython size={60} className="text-yellow-400" />
                             </div>
-                            <h5 className="text-xl font-bold mt-2">Python</h5>
+                            <h5 className="text-xl font-bold mt-2 text-white">Python</h5>
                         </div>
 
                         {/* ITEM 9: Java */}
@@ -118,10 +110,10 @@ export const Skills = () => {
                             <div className="w-32 h-32 rounded-full border-4 border-red-500 flex items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.5)]">
                                 <FaJava size={60} className="text-red-500" />
                             </div>
-                            <h5 className="text-xl font-bold mt-2">Java</h5>
+                            <h5 className="text-xl font-bold mt-2 text-white">Java</h5>
                         </div>
 
-                        {/* ITEM 10: SQL Server (Imagen SVG) */}
+                        {/* ITEM 10: SQL Server */}
                         <div className="flex flex-col items-center justify-center gap-4 hover:scale-110 transition duration-300">
                             <div className="w-32 h-32 rounded-full border-4 border-red-600 flex items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.5)]">
                                 <img
@@ -130,15 +122,11 @@ export const Skills = () => {
                                     className="w-16 h-16"
                                 />
                             </div>
-                            <h5 className="text-xl font-bold mt-2">SQL Server</h5>
+                            <h5 className="text-xl font-bold mt-2 text-white">SQL Server</h5>
                         </div>
-
                     </Carousel>
                 </div>
             </div>
-
-            {/* Fondo decorativo */}
-            <img className="absolute top-[20%] left-0 w-[40%] opacity-30 pointer-events-none z-0" src="https://raw.githubusercontent.com/judygab/web-dev-projects/main/personal-portfolio/src/assets/img/color-sharp.png" alt="gradient" />
         </section>
     );
 };

@@ -49,7 +49,7 @@ export const About = () => {
                     {/* Estadísticas rápidas */}
                     <div className="flex justify-center md:justify-start gap-8 py-4">
                         <div>
-                            <span className="block text-3xl font-bold text-gray-900 dark:text-white">2+</span>
+                            <span className="block text-3xl font-bold text-gray-900 dark:text-white">1+</span>
                             <span className="text-sm text-gray-600 dark:text-gray-500">{t('about.stats.years')}</span>
                         </div>
                         <div>
@@ -57,7 +57,7 @@ export const About = () => {
                             <span className="text-sm text-gray-600 dark:text-gray-500">{t('about.stats.projects')}</span>
                         </div>
                         <div>
-                            <span className="block text-3xl font-bold text-gray-900 dark:text-white">5+</span>
+                            <span className="block text-3xl font-bold text-gray-900 dark:text-white">10+</span>
                             <span className="text-sm text-gray-600 dark:text-gray-500">{t('about.stats.clients')}</span>
                         </div>
                     </div>
