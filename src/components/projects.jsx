@@ -1,11 +1,10 @@
 import React from 'react';
-import { useLanguage } from '../context/LanguageContext'; // <--- 1. Importar Contexto
+import { useLanguage } from '../context/LanguageContext';
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 export const Projects = () => {
-    const { t } = useLanguage(); // <--- 2. Usar Hook
+    const { t } = useLanguage();
 
-    // 3. Definimos los proyectos usando t() para textos y strings normales para URLs
     const projects = [
         {
             title: t('projects.p1.title'),
@@ -38,8 +37,15 @@ export const Projects = () => {
     ];
 
     return (
-        <section className="bg-black text-white py-20 px-4" id="projects">
-            <div className="container mx-auto">
+        // 1. Agregamos 'relative overflow-hidden' para contener la luz
+        <section className="bg-black text-white py-20 px-4 relative overflow-hidden" id="projects">
+
+            {/* --- FONDO DECORATIVO (NEBULOSA) --- */}
+            {/* Esta vez la ponemos a la DERECHA (right-[-10%]) y usamos tonos Azules/Morados */}
+            <div className="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-gradient-to-l from-purple-600/30 to-blue-600/30 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+            {/* 2. Agregamos 'relative z-10' para que el contenido esté ENCIMA de la luz */}
+            <div className="container mx-auto relative z-10">
 
                 {/* Título de la Sección */}
                 <div className="text-center mb-16">
@@ -56,7 +62,7 @@ export const Projects = () => {
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg shadow-purple-900/20 border border-gray-800"
+                            className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg shadow-purple-900/20 border border-gray-800 bg-[#1a1a1a]"
                         >
                             {/* Imagen del Proyecto */}
                             <img
@@ -65,7 +71,7 @@ export const Projects = () => {
                                 className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500"
                             />
 
-                            {/* Overlay (Capa oscura que aparece al pasar el mouse) */}
+                            {/* Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-center p-6 translate-y-4 group-hover:translate-y-0">
 
                                 <h3 className="text-2xl font-bold mb-2 text-white">{project.title}</h3>
