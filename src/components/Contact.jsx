@@ -23,11 +23,12 @@ export const Contact = () => {
         e.preventDefault();
         setButtonText(t('contact.form.sending'));
 
-        // credenciales de EmailJS
+        // Credenciales de EmailJS
         const SERVICE_ID = 'service_rz98ko3';
         const TEMPLATE_ID = 'template_uhp9b2h';
         const PUBLIC_KEY = 'bfqBWa1uWOAT6Zybu';
 
+        // Enviar el formulario usando EmailJS
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
             .then((result) => {
                 setButtonText(t('contact.form.sent'));
@@ -45,11 +46,17 @@ export const Contact = () => {
     };
 
     return (
-        // 1. FONDO PRINCIPAL: Blanco en Light, Negro en Dark + Transición suave
         <section id="contact" className="min-h-screen bg-white dark:bg-[#121212] py-20 px-6 relative overflow-hidden transition-colors duration-300">
 
-            {/* 2. DEGRADADO DECORATIVO (Nebulosa): Solo visible en Dark Mode */}
+            {/* ================= LUCES DECORATIVAS (Diagonal) ================= */}
+
+            {/* LUZ 1: ABAJO IZQUIERDA (Morado/Rosa) */}
             <div className="hidden dark:block absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-gradient-to-t from-purple-600/20 to-pink-600/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+            {/* LUZ 2: ARRIBA DERECHA (Azul/Morado) - NUEVA */}
+            <div className="hidden dark:block absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-gradient-to-b from-blue-600/20 to-purple-600/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+            {/* ================================================================ */}
 
             <div className="container mx-auto relative z-10">
 
@@ -75,7 +82,6 @@ export const Contact = () => {
                             />
                         </div>
 
-                        {/* Tarjeta de Email: Adaptada a Light/Dark */}
                         <div className="space-y-4 text-gray-700 dark:text-gray-300 w-full max-w-md bg-gray-50 dark:bg-[#1a1a1a] p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg">
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center text-purple-600 dark:text-purple-400">
@@ -87,7 +93,6 @@ export const Contact = () => {
                     </div>
 
                     {/* --- COLUMNA DERECHA: Formulario --- */}
-                    {/* Tarjeta del Formulario: Adaptada a Light/Dark */}
                     <div className="w-full md:w-1/2 bg-gray-50 dark:bg-[#1a1a1a] p-8 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-2xl shadow-purple-900/10">
 
                         <form ref={form} onSubmit={handleSubmit} className="space-y-6">
