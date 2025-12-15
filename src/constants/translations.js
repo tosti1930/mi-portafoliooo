@@ -9,9 +9,9 @@ export const translations = {
             contact: "Contacto",
         },
         hero: {
-            tagline: "Bienvenido a mi Portafolio",
-            role: "Desarrollador Web",
-            description: "💻 Estudiante de Ingeniería en Sistemas Computacionales, apasionado por la programación, el desarrollo de software y el mundo de la tecnología.",
+            tagline: "Hola soy Claudio 😁",
+            role: "Desarrollador Full-Stack",
+            description: "💻 Ingeniero en Sistemas Computacionales: No solo escribo código, resuelvo problemas. Desde el diseño de interfaces intuitivas hasta la lógica de negocio en el servidor. Comprometido con la calidad del software y una excelente experiencia de usuario.",
             button: "Conectemos"
         },
         about: {
@@ -116,10 +116,10 @@ export const translations = {
             contact: "Contact",
         },
         hero: {
-            tagline: "Welcome to my Portfolio",
-            role: "Web Developer",
-            description: "💻 Computer Systems Engineering student, passionate about programming, software development, and the world of technology.",
-            button: "Let’s Connect"
+            tagline: "Hi, I'm Claudio 😁",
+            role: "Full-Stack Developer",
+            description: "💻 Computer Systems Engineer: I don't just write code, I solve problems. From designing intuitive interfaces to server-side business logic. Committed to software quality and an excellent user experience.",
+            button: "Let's Connect"
         },
         about: {
             title: "About Me",
