@@ -1,19 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-// 1. IMPORTAMOS FaBars (Hamburguesa) y FaTimes (Cerrar X)
 import { FaLinkedinIn, FaGithub, FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
 import { MdLanguage } from "react-icons/md";
 
 export const NavBar = () => {
+    // Contexto de idioma
     const { language, toggleLanguage, t } = useLanguage();
-
-    // 2. ESTADO PARA EL MENÚ MÓVIL (Abierto/Cerrado)
+    // Estado para el menú móvil
     const [isOpen, setIsOpen] = useState(false);
+
+    // 1. ESTADO PARA DETECTAR EL SCROLL
+    const [scrolled, setScrolled] = useState(false);
 
     const [theme, setTheme] = useState(() => {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) return "dark";
         return "light";
     });
+
+    // 2. EFECTO PARA ESCUCHAR EL EVENTO SCROLL
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true); // Si bajamos más de 50px, activamos el fondo
+            } else {
+                setScrolled(false); // Si estamos arriba, fondo transparente
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     useEffect(() => {
         if (theme === "dark") document.documentElement.classList.add("dark");
@@ -23,16 +39,24 @@ export const NavBar = () => {
     const toggleTheme = () => setTheme(prev => prev === "light" ? "dark" : "light");
 
     return (
-        <nav className="fixed w-full top-0 z-50 bg-[#121212]/90 backdrop-blur-md border-b border-gray-800 transition-colors duration-300 dark:bg-[#121212]/90 dark:border-gray-800 bg-white/90 border-gray-200">
+        // 3. CLASES DINÁMICAS EN EL NAV
+        // Si 'scrolled' es true: Fondo sólido con blur y borde (Lo que tenías antes)
+        // Si 'scrolled' es false: Fondo transparente 'bg-transparent' y sin borde 'border-transparent'
+        <nav className={`fixed w-full top-0 z-50 transition-all duration-300 
+            ${scrolled
+                ? "bg-white/90 dark:bg-[#121212]/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 py-4 shadow-lg"
+                : "bg-transparent border-b border-transparent py-6"
+            }
+        `}>
 
-            <div className="flex items-center justify-between py-6 px-6 md:px-10">
+            <div className="flex items-center justify-between px-6 md:px-10">
 
                 {/* LOGO */}
                 <div className="text-2xl font-bold flex items-center gap-2 dark:text-white text-black">
                     <span className="text-3xl">👨‍💻</span>
                 </div>
 
-                {/* --- MENÚ DE ESCRITORIO (Se oculta en celular 'hidden md:flex') --- */}
+                {/* --- MENÚ DE ESCRITORIO --- */}
                 <div className="hidden md:flex gap-8 text-lg font-medium dark:text-gray-300 text-gray-700">
                     <a href="#home" className="hover:text-purple-500 transition">{t('navbar.home')}</a>
                     <a href="#experience" className="hover:text-purple-500 transition">{t('navbar.experience')}</a>
@@ -42,7 +66,7 @@ export const NavBar = () => {
                     <a href="#contact" className="hover:text-purple-500 transition">{t('navbar.contact')}</a>
                 </div>
 
-                {/* --- CONTROLES DE ESCRITORIO (Idioma/Tema/Redes) --- */}
+                {/* --- CONTROLES DE ESCRITORIO --- */}
                 <div className="hidden md:flex items-center gap-4">
                     <button onClick={toggleLanguage} className="flex items-center gap-1 px-3 py-1 rounded-full border dark:border-gray-600 border-gray-300 dark:text-gray-300 text-gray-700 hover:border-purple-500 transition text-sm font-bold">
                         <MdLanguage size={18} /> {language.toUpperCase()}
@@ -55,14 +79,13 @@ export const NavBar = () => {
                     <div className="h-6 w-[1px] bg-gray-600 mx-2"></div>
 
                     <div className="flex gap-3">
-                        <a href="#" className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-purple-500 dark:text-white transition"><FaLinkedinIn /></a>
-                        <a href="#" className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-purple-500 dark:text-white transition"><FaGithub /></a>
+                        <a href="https://linkedin.com" target="_blank" className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-purple-500 dark:text-white transition"><FaLinkedinIn /></a>
+                        <a href="https://github.com" target="_blank" className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-purple-500 dark:text-white transition"><FaGithub /></a>
                     </div>
                 </div>
 
-                {/* --- BOTÓN HAMBURGUESA (Solo visible en celular 'md:hidden') --- */}
+                {/* --- BOTÓN HAMBURGUESA --- */}
                 <div className="md:hidden flex items-center gap-4">
-                    {/* Dejamos el cambio de tema accesible también en celular */}
                     <button onClick={toggleTheme} className="p-2 text-orange-500 dark:text-yellow-400">
                         {theme === "dark" ? <FaSun size={20} /> : <FaMoon size={20} />}
                     </button>
@@ -73,10 +96,9 @@ export const NavBar = () => {
                 </div>
             </div>
 
-            {/* --- MENÚ DESPLEGABLE MÓVIL (Se muestra si isOpen es true) --- */}
+            {/* --- MENÚ DESPLEGABLE MÓVIL --- */}
             {isOpen && (
                 <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-[#121212] border-t dark:border-gray-800 border-gray-200 p-6 flex flex-col gap-6 shadow-xl h-screen">
-                    {/* Links Móviles (Al dar clic, cerramos el menú) */}
                     <a href="#home" onClick={() => setIsOpen(false)} className="text-xl font-medium dark:text-gray-300 text-gray-700 hover:text-purple-500">{t('navbar.home')}</a>
                     <a href="#experience" onClick={() => setIsOpen(false)} className="text-xl font-medium dark:text-gray-300 text-gray-700 hover:text-purple-500">{t('navbar.experience')}</a>
                     <a href="#skills" onClick={() => setIsOpen(false)} className="text-xl font-medium dark:text-gray-300 text-gray-700 hover:text-purple-500">{t('navbar.skills')}</a>
@@ -86,12 +108,10 @@ export const NavBar = () => {
 
                     <div className="h-[1px] bg-gray-600 w-full opacity-30"></div>
 
-                    {/* Botón Idioma Móvil */}
                     <button onClick={toggleLanguage} className="flex items-center gap-2 text-lg font-bold dark:text-white text-black">
                         <MdLanguage size={22} /> Cambiar Idioma ({language.toUpperCase()})
                     </button>
 
-                    {/* Redes Sociales Móvil */}
                     <div className="flex gap-4 mt-4">
                         <a href="#" className="p-3 bg-gray-200 dark:bg-gray-800 rounded-full dark:text-white"><FaLinkedinIn size={20} /></a>
                         <a href="#" className="p-3 bg-gray-200 dark:bg-gray-800 rounded-full dark:text-white"><FaGithub size={20} /></a>
