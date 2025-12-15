@@ -4,32 +4,35 @@ import { FaLinkedinIn, FaGithub, FaSun, FaMoon, FaBars, FaTimes } from "react-ic
 import { MdLanguage } from "react-icons/md";
 
 export const NavBar = () => {
-    // Contexto de idioma
     const { language, toggleLanguage, t } = useLanguage();
-    // Estado para el menú móvil
     const [isOpen, setIsOpen] = useState(false);
 
-    // 1. ESTADO PARA DETECTAR EL SCROLL
-    const [scrolled, setScrolled] = useState(false);
+    // 1. ESTADOS PARA EL SCROLL
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
 
     const [theme, setTheme] = useState(() => {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) return "dark";
         return "light";
     });
 
-    // 2. EFECTO PARA ESCUCHAR EL EVENTO SCROLL
+    // 2. LÓGICA DE "DESVANECER AL BAJAR / APARECER AL SUBIR"
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true); // Si bajamos más de 50px, activamos el fondo
-            } else {
-                setScrolled(false); // Si estamos arriba, fondo transparente
-            }
+            const currentScrollPos = window.scrollY;
+
+            // Lógica:
+            // Si subimos (prev > current) O estamos arriba del todo (current < 10) -> VISIBLE
+            // Si bajamos (prev < current) Y no estamos arriba -> OCULTO
+            const isVisible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
+
+            setVisible(isVisible);
+            setPrevScrollPos(currentScrollPos);
         };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [prevScrollPos]);
 
     useEffect(() => {
         if (theme === "dark") document.documentElement.classList.add("dark");
@@ -39,14 +42,14 @@ export const NavBar = () => {
     const toggleTheme = () => setTheme(prev => prev === "light" ? "dark" : "light");
 
     return (
-        // 3. CLASES DINÁMICAS EN EL NAV
-        // Si 'scrolled' es true: Fondo sólido con blur y borde (Lo que tenías antes)
-        // Si 'scrolled' es false: Fondo transparente 'bg-transparent' y sin borde 'border-transparent'
-        <nav className={`fixed w-full top-0 z-50 transition-all duration-300 
-            ${scrolled
-                ? "bg-white/90 dark:bg-[#121212]/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 py-4 shadow-lg"
-                : "bg-transparent border-b border-transparent py-6"
-            }
+        // 3. CLASES DINÁMICAS
+        // Si 'visible' es true: translate-y-0 (En su lugar) y Opacidad 1
+        // Si 'visible' es false: -translate-y-full (Se sube fuera de pantalla) y Opacidad 0
+        <nav className={`fixed w-full top-0 z-50 transition-all duration-500 transform
+            ${visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
+            
+            ${/* Estilos base: Fondo con desenfoque para que se vea moderno cuando está visible */ ""}
+            bg-white/90 dark:bg-[#121212]/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-lg py-4
         `}>
 
             <div className="flex items-center justify-between px-6 md:px-10">
