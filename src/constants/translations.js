@@ -30,12 +30,12 @@ export const translations = {
             job2: {
                 role: "Programa Dual y Residencias",
                 company: "Centro de Investigación en Matemáticas (CIMAT)",
-                description: "Colaboración en el Área de Gerencia de Ingeniería de Calidad, enfocándome en el desarrollo web para proyectos de Banxico."
+                description: "Colaboración en el Área de Gerencia de Ingeniería de Calidad, enfocándome en el desarrollo web para un proyecto de Banxico."
             },
             job3: {
                 role: "Freelance Web Developer",
-                company: "Autónomo",
-                description: "Desarrollo de soluciones web a medida, especialización en React, integraciones de API y algoritmos avanzados."
+                company: "Proyectos Freelance Independientes",
+                description: "Diseño y construcción de aplicaciones web escalables. Desde la arquitectura del backend y bases de datos hasta interfaces modernas y responsivas"
             }
         },
         skills: {
@@ -137,12 +137,12 @@ export const translations = {
             job2: {
                 role: "Dual Program & Residency",
                 company: "Mathematics Research Center (CIMAT)",
-                description: "Collaboration in the Quality Engineering Management Area, focusing on web development for Banxico projects."
+                description: "Collaboration in the Quality Engineering Management Area, focusing on web development for Banxico project."
             },
             job3: {
                 role: "Freelance Web Developer",
-                company: "Freelance",
-                description: "Development of custom web solutions, specializing in React, API integrations, and advanced algorithms."
+                company: "Independent Freelance Projects",
+                description: "Design and construction of scalable web applications. From backend architecture and databases to modern, responsive interfaces."
             }
         },
         skills: {
