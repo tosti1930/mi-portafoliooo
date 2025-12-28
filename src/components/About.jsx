@@ -1,5 +1,5 @@
 import React from 'react';
-import profileImg from '../assets/PERFIL.png'; // Asegúrate de que la ruta sea correcta
+import profileImg from '../assets/PERFIL.png'; // Ruta a la imagen de perfil
 import { useLanguage } from '../context/LanguageContext';
 import { FaFileDownload } from "react-icons/fa";
 
