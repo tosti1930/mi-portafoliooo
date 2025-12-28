@@ -4,7 +4,9 @@ import { FaLinkedinIn, FaGithub, FaSun, FaMoon, FaBars, FaTimes } from "react-ic
 import { MdLanguage } from "react-icons/md";
 
 export const NavBar = () => {
+    // Contexto de idioma
     const { language, toggleLanguage, t } = useLanguage();
+    // Estado para el menú móvil
     const [isOpen, setIsOpen] = useState(false);
 
     // 1. ESTADOS PARA EL SCROLL
