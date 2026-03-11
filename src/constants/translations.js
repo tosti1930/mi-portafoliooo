@@ -68,8 +68,8 @@ export const translations = {
         },
         about: {
             title: "Sobre Mí",
-            subtitle: "Desarrollador Web Freelancer & Explorador Digital",
-            text: "Ingeniero en Sistemas Computacionales con pasión por el desarrollo de aplicaciones, crear soluciones tecnológicas que combinan funcionalidad, rendimiento y una experiencia de usuario bien cuidada. Disfruto trabajar en proyectos de desarrollo web, transformando ideas en interfaces modernas y eficientes. Me motiva aprender continuamente, explorar nuevas herramientas y mejorar cada proyecto en el que participo. Siempre busco aportar valor a través de código limpio, buenas prácticas y una visión orientada al crecimiento.",
+            subtitle: "Desarrollador Web Freelancer",
+            text: "Apasionado por el desarrollo web, crear y combinando funcionalidad, rendimiento y una experiencia de usuario bien cuidada.  Me motiva aprender continuamente, explorar nuevas herramientas y mejorar cada proyecto en el que participo. Siempre busco consolidar mis conocimientos a través de código limpio, buenas prácticas y una visión orientada al crecimiento.",
             stats: {
                 years: "Años de Exp.",
                 projects: "Proyectos",
