@@ -69,7 +69,7 @@ export const translations = {
         about: {
             title: "Sobre Mí",
             subtitle: "Desarrollador Web Freelancer",
-            text: "Apasionado por el desarrollo web, crear y combinando funcionalidad, rendimiento y una experiencia de usuario bien cuidada.  Me motiva aprender continuamente, explorar nuevas herramientas y mejorar cada proyecto en el que participo. Siempre busco consolidar mis conocimientos a través de código limpio, buenas prácticas y una visión orientada al crecimiento.",
+            text: "Apasionado por el desarrollo web. Me motiva aprender continuamente, explorar nuevas herramientas y mejorar cada proyecto en el que participo. Siempre busco consolidar mis conocimientos a través de código limpio, buenas prácticas y una visión orientada al crecimiento.",
             stats: {
                 years: "Años de Exp.",
                 projects: "Proyectos",
@@ -175,8 +175,8 @@ export const translations = {
         },
         about: {
             title: "About Me",
-            subtitle: "Freelance Web Developer & Digital Explorer",
-            text: "Computer Systems Engineer with a passion for application development, creating technological solutions that combine functionality, performance, and a well-curated user experience. I enjoy working on web development projects, transforming ideas into modern and efficient interfaces. I am motivated to continuously learn, explore new tools, and improve every project I participate in. I always seek to add value through clean code, best practices, and a growth-oriented vision.",
+            subtitle: "Freelance Web Developer",
+            text: "Passionate about web development. I'm motivated by continuous learning, exploring new tools, and improving every project I work on. I always strive to solidify my knowledge through clean code, best practices, and a growth-oriented approach.",
             stats: {
                 years: "Years Exp.",
                 projects: "Projects",
