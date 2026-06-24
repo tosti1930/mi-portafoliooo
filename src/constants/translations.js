@@ -118,7 +118,7 @@ export const translations = {
         hero: {
             tagline: "Hi, I'm Claudio 😁",
             role: "Full-Stack Developer",
-            description: "💻 Computer Systems Engineer | Full Stack Developer: I don't just write code, I solve problems. From designing interfaces to server-side business logic. Committed to software quality and a great user experience.",
+            description: "💻 Computer Systems Engineer | Full Stack Developer: I don't just write codes, I solve problems. From designing interfaces to server-side business logic. Committed to software quality and a great user experience.",
             button: "Let's Connect"
         },
         about: {
@@ -147,7 +147,7 @@ export const translations = {
         },
         skills: {
             title: "Skills",
-            desc: "These are the technologies I work with daily to build modern and scalable web applications."
+            desc: "These are the technologies I work daily to build modern and scalable web applications."
         },
         projects: {
             title: "My Projects",
@@ -176,7 +176,7 @@ export const translations = {
         about: {
             title: "About Me",
             subtitle: "Freelance Web Developer",
-            text: "Passionate about web development. I'm motivated by continuous learning, exploring new tools, and improving every project I work on. I always strive to solidify my knowledge through clean code, best practices, and a growth-oriented approach.",
+            text: "Passionate about web development. I'm motivated by continuous learning, exploring new tools, and improving with every project that I work on. I always strive to solidify my knowledge through clean code, best practices, and a growth-oriented approach.",
             stats: {
                 years: "Years Exp.",
                 projects: "Projects",
@@ -186,7 +186,7 @@ export const translations = {
         },
         contact: {
             title: "Get In Touch :)",
-            subtitle: "Got a project in mind? Let's talk!",
+            subtitle: "Do you have a project in mind? Let's talk!",
             info: {
                 email: "claudioisrael2424@gmail.com",
                 location: "Guanajuato, MX"
