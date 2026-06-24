@@ -65,7 +65,7 @@ export const About = () => {
                     {/* BOTÓN DE DESCARGA DE CV */}
                     <div className="pt-4">
                         <a
-                            href="/CV CLAUDIO.pdf"
+                            href="/Claudio_Cornejo_CV.pdf"
                             download="CV_Claudio_Alvarez.pdf"
                             className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-full hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] transform hover:-translate-y-1 transition-all duration-300"
                         >
