@@ -118,7 +118,7 @@ export const translations = {
         hero: {
             tagline: "Hi, I'm Claudio 😁",
             role: "Full-Stack Developer",
-            description: "💻 Computer Systems Engineer: I don't just write code, I solve problems. From designing intuitive interfaces to server-side business logic. Committed to software quality and an excellent user experience.",
+            description: "💻 Computer Systems Engineer | Full Stack Developer: I don't just write code, I solve problems. From designing interfaces to server-side business logic. Committed to software quality and a great user experience.",
             button: "Let's Connect"
         },
         about: {
