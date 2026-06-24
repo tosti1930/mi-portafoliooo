@@ -17,7 +17,7 @@ export const translations = {
         about: {
             title: "Sobre Mí",
             subtitle: "Desarrollador Web & Explorador Digital",
-            text: "Soy un apasionado por la tecnología con un enfoque en crear experiencias web inmersivas y funcionales. Me especializo en el ecosistema React.",
+            text: "Soy un apasionado por la tecnología con un enfoque en crear experiencias web inmersivas y funcionales.",
             button: "Descargar CV"
         },
         experience: {
@@ -124,7 +124,7 @@ export const translations = {
         about: {
             title: "About Me",
             subtitle: "Web Developer & Digital Explorer",
-            text: "I am passionate about technology with a focus on creating immersive and functional web experiences. I specialize in the React ecosystem.",
+            text: "I am passionate about technology with a focus on creating immersive and functional web experiences.",
             button: "Download CV"
         },
         experience: {
