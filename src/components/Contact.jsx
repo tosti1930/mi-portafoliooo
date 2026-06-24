@@ -24,7 +24,7 @@ export const Contact = () => {
         setButtonText(t('contact.form.sending'));
 
         // Credenciales de EmailJS
-        const SERVICE_ID = 'service_rz98ko3';
+        const SERVICE_ID = 'service_0v39yi1';
         const TEMPLATE_ID = 'template_uhp9b2h';
         const PUBLIC_KEY = 'bfqBWa1uWOAT6Zybu';
 
