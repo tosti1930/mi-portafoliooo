@@ -11,7 +11,7 @@ export const translations = {
         hero: {
             tagline: "Hola, soy Claudio",
             role: "Desarrollador Full-Stack",
-            description: "💻 Ingeniero en Sistemas Computacionales: No solo escribo código, resuelvo problemas. Desde el diseño de interfaces intuitivas hasta la lógica de negocio en el servidor. Comprometido con la calidad del software y una excelente experiencia de usuario.",
+            description: "💻 Ingeniero en Sistemas Computacionales | Desarollador Full Stack: No solo escribo código, resuelvo problemas. Desde el diseño de interfaces hasta la lógica de negocio en el servidor. Comprometido con la calidad del software y una excelente experiencia de usuario.",
             button: "Conectemos"
         },
         about: {
